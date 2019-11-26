@@ -33,7 +33,7 @@ namespace HIVE_Ticket
     {
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPage1 = new System.Windows.Forms.TabPage();
-      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.textBoxMovieDistID = new System.Windows.Forms.TextBox();
       this.label5 = new System.Windows.Forms.Label();
       this.textBoxMovieActor = new System.Windows.Forms.TextBox();
       this.label4 = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@ namespace HIVE_Ticket
       // 
       // tabPage1
       // 
-      this.tabPage1.Controls.Add(this.textBox1);
+      this.tabPage1.Controls.Add(this.textBoxMovieDistID);
       this.tabPage1.Controls.Add(this.label5);
       this.tabPage1.Controls.Add(this.textBoxMovieActor);
       this.tabPage1.Controls.Add(this.label4);
@@ -107,13 +107,13 @@ namespace HIVE_Ticket
       this.tabPage1.Text = "영화";
       this.tabPage1.UseVisualStyleBackColor = true;
       // 
-      // textBox1
+      // textBoxMovieDistID
       // 
-      this.textBox1.Location = new System.Drawing.Point(631, 288);
-      this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(133, 23);
-      this.textBox1.TabIndex = 15;
+      this.textBoxMovieDistID.Location = new System.Drawing.Point(631, 288);
+      this.textBoxMovieDistID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.textBoxMovieDistID.Name = "textBoxMovieDistID";
+      this.textBoxMovieDistID.Size = new System.Drawing.Size(133, 23);
+      this.textBoxMovieDistID.TabIndex = 15;
       // 
       // label5
       // 
@@ -196,6 +196,7 @@ namespace HIVE_Ticket
       this.buttonSearch1.TabIndex = 5;
       this.buttonSearch1.Text = "검색";
       this.buttonSearch1.UseVisualStyleBackColor = true;
+      this.buttonSearch1.Click += new System.EventHandler(this.buttonSearch1_Click);
       // 
       // buttonInsert1
       // 
@@ -250,11 +251,11 @@ namespace HIVE_Ticket
       this.tabPage2.Controls.Add(this.button3);
       this.tabPage2.Controls.Add(this.button4);
       this.tabPage2.Controls.Add(this.dataGridViewDist);
-      this.tabPage2.Location = new System.Drawing.Point(4, 24);
+      this.tabPage2.Location = new System.Drawing.Point(4, 22);
       this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.tabPage2.Size = new System.Drawing.Size(770, 520);
+      this.tabPage2.Size = new System.Drawing.Size(770, 522);
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "영화 배급사";
       this.tabPage2.UseVisualStyleBackColor = true;
@@ -434,7 +435,6 @@ namespace HIVE_Ticket
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.TextBox textBoxMovieActor;
     private System.Windows.Forms.Label label5;
-    private System.Windows.Forms.TextBox textBox1;
     private System.Windows.Forms.Label label10;
     private System.Windows.Forms.Label label9;
     private System.Windows.Forms.GroupBox groupBox1;
@@ -443,5 +443,6 @@ namespace HIVE_Ticket
     private System.Windows.Forms.RadioButton radioButton3;
     private System.Windows.Forms.TextBox textBoxDistMother;
     private System.Windows.Forms.TextBox textBoxDistName;
+    private System.Windows.Forms.TextBox textBoxMovieDistID;
   }
 }

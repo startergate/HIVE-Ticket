@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -58,6 +59,51 @@ namespace HIVE_Ticket
       catch (Exception ex)
       {
         MessageBox.Show(ex.ToString());
+      }
+    }
+
+    private void buttonSearch1_Click(object sender, EventArgs e)
+    {
+      var sql = "SELECT * FROM movies";
+
+      List<string> conditions = new List<string>();
+      if (!String.IsNullOrWhiteSpace(textBoxMovieDistID.Text))
+      {
+        conditions.Add("distid=\"" + textBoxMovieDistID.Text + "\"");
+      }
+      
+      if (!String.IsNullOrWhiteSpace(textBoxMovieTitle.Text))
+      {
+        conditions.Add("title=\"" + textBoxMovieTitle.Text + "\"");
+      }
+
+      if (!String.IsNullOrWhiteSpace(textBoxMovieDesc.Text))
+      {
+        conditions.Add("summary=\"" + textBoxMovieDesc.Text + "\"");
+      }
+
+      if (!String.IsNullOrWhiteSpace(textBoxMovieDirector.Text))
+      {
+        conditions.Add("director=\"" + textBoxMovieDirector.Text + "\"");
+      }
+      
+      if (!String.IsNullOrWhiteSpace(textBoxMovieActor.Text))
+      {
+        conditions.Add("best_actor=\"" + textBoxMovieActor.Text + "\"");
+      }
+
+      var condition = (conditions.ToArray().Length > 0 ? " WHERE " : "") + String.Join(" AND ", conditions.ToArray());
+
+      adapter.SelectCommand = new MySqlCommand(sql + condition, conn);
+      if (adapter.Fill(dataSet) > 0)
+      {
+        dataSet.Clear();
+        adapter.Fill(dataSet);
+        dataGridViewMovie.DataSource = dataSet.Tables["Table"].DefaultView.ToTable(true);
+      }
+      else
+      {
+        MessageBox.Show("검색된 데이터가 없습니다.");
       }
     }
   }
