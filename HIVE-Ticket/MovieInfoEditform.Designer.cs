@@ -50,18 +50,18 @@ namespace HIVE_Ticket
       this.dataGridViewMovie = new System.Windows.Forms.DataGridView();
       this.tabPage2 = new System.Windows.Forms.TabPage();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.radioButton3 = new System.Windows.Forms.RadioButton();
       this.radioButton2 = new System.Windows.Forms.RadioButton();
       this.radioButton1 = new System.Windows.Forms.RadioButton();
-      this.textBox5 = new System.Windows.Forms.TextBox();
+      this.textBoxDistMother = new System.Windows.Forms.TextBox();
       this.label9 = new System.Windows.Forms.Label();
-      this.textBox6 = new System.Windows.Forms.TextBox();
+      this.textBoxDistName = new System.Windows.Forms.TextBox();
       this.label10 = new System.Windows.Forms.Label();
       this.buttonSearch2 = new System.Windows.Forms.Button();
       this.buttonInsert = new System.Windows.Forms.Button();
       this.button3 = new System.Windows.Forms.Button();
       this.button4 = new System.Windows.Forms.Button();
       this.dataGridViewDist = new System.Windows.Forms.DataGridView();
-      this.radioButton3 = new System.Windows.Forms.RadioButton();
       this.tabControl1.SuspendLayout();
       this.tabPage1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize) (this.dataGridViewMovie)).BeginInit();
@@ -241,9 +241,9 @@ namespace HIVE_Ticket
       // tabPage2
       // 
       this.tabPage2.Controls.Add(this.groupBox1);
-      this.tabPage2.Controls.Add(this.textBox5);
+      this.tabPage2.Controls.Add(this.textBoxDistMother);
       this.tabPage2.Controls.Add(this.label9);
-      this.tabPage2.Controls.Add(this.textBox6);
+      this.tabPage2.Controls.Add(this.textBoxDistName);
       this.tabPage2.Controls.Add(this.label10);
       this.tabPage2.Controls.Add(this.buttonSearch2);
       this.tabPage2.Controls.Add(this.buttonInsert);
@@ -273,6 +273,17 @@ namespace HIVE_Ticket
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "배급사 종류";
       // 
+      // radioButton3
+      // 
+      this.radioButton3.Location = new System.Drawing.Point(10, 78);
+      this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.radioButton3.Name = "radioButton3";
+      this.radioButton3.Size = new System.Drawing.Size(111, 22);
+      this.radioButton3.TabIndex = 2;
+      this.radioButton3.TabStop = true;
+      this.radioButton3.Text = "중소";
+      this.radioButton3.UseVisualStyleBackColor = true;
+      // 
       // radioButton2
       // 
       this.radioButton2.Location = new System.Drawing.Point(10, 51);
@@ -295,13 +306,13 @@ namespace HIVE_Ticket
       this.radioButton1.Text = "메이저 / 직배";
       this.radioButton1.UseVisualStyleBackColor = true;
       // 
-      // textBox5
+      // textBoxDistMother
       // 
-      this.textBox5.Location = new System.Drawing.Point(634, 90);
-      this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.textBox5.Name = "textBox5";
-      this.textBox5.Size = new System.Drawing.Size(133, 23);
-      this.textBox5.TabIndex = 19;
+      this.textBoxDistMother.Location = new System.Drawing.Point(634, 90);
+      this.textBoxDistMother.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.textBoxDistMother.Name = "textBoxDistMother";
+      this.textBoxDistMother.Size = new System.Drawing.Size(133, 23);
+      this.textBoxDistMother.TabIndex = 19;
       // 
       // label9
       // 
@@ -311,13 +322,13 @@ namespace HIVE_Ticket
       this.label9.TabIndex = 18;
       this.label9.Text = "모회사명";
       // 
-      // textBox6
+      // textBoxDistName
       // 
-      this.textBox6.Location = new System.Drawing.Point(634, 31);
-      this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.textBox6.Name = "textBox6";
-      this.textBox6.Size = new System.Drawing.Size(133, 23);
-      this.textBox6.TabIndex = 17;
+      this.textBoxDistName.Location = new System.Drawing.Point(634, 31);
+      this.textBoxDistName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.textBoxDistName.Name = "textBoxDistName";
+      this.textBoxDistName.Size = new System.Drawing.Size(133, 23);
+      this.textBoxDistName.TabIndex = 17;
       // 
       // label10
       // 
@@ -378,17 +389,6 @@ namespace HIVE_Ticket
       this.dataGridViewDist.Size = new System.Drawing.Size(625, 519);
       this.dataGridViewDist.TabIndex = 6;
       // 
-      // radioButton3
-      // 
-      this.radioButton3.Location = new System.Drawing.Point(10, 77);
-      this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.radioButton3.Name = "radioButton3";
-      this.radioButton3.Size = new System.Drawing.Size(111, 22);
-      this.radioButton3.TabIndex = 2;
-      this.radioButton3.TabStop = true;
-      this.radioButton3.Text = "중소";
-      this.radioButton3.UseVisualStyleBackColor = true;
-      // 
       // MovieInfoEditform
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -436,12 +436,12 @@ namespace HIVE_Ticket
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.TextBox textBox1;
     private System.Windows.Forms.Label label10;
-    private System.Windows.Forms.TextBox textBox6;
     private System.Windows.Forms.Label label9;
-    private System.Windows.Forms.TextBox textBox5;
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.RadioButton radioButton1;
     private System.Windows.Forms.RadioButton radioButton2;
     private System.Windows.Forms.RadioButton radioButton3;
+    private System.Windows.Forms.TextBox textBoxDistMother;
+    private System.Windows.Forms.TextBox textBoxDistName;
   }
 }
