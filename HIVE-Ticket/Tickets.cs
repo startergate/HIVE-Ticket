@@ -50,6 +50,12 @@ namespace HIVE_Ticket
 
     private void button1_Click(object sender, EventArgs e)
     {
+      // TODO: 조회
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+      // TODO: 예매
     }
   }
 }
