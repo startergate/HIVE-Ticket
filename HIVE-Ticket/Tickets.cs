@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -50,12 +51,41 @@ namespace HIVE_Ticket
 
     private void button1_Click(object sender, EventArgs e)
     {
-      // TODO: 조회
+      var sql = "SELECT * FROM ticket_with_user";
+
+      List<string> conditions = new List<string>();
+      if (!String.IsNullOrWhiteSpace(customer_name.Text))
+      {
+        conditions.Add("name=\"" + customer_name.Text + "\"");
+      }
+
+      if (!String.IsNullOrWhiteSpace(movie_name.Text))
+      {
+        conditions.Add("title=\"" + movie_name.Text + "\"");
+      }
+
+      if (!String.IsNullOrWhiteSpace(movie_time.Text))
+      {
+        conditions.Add("available_at=\"" + movie_time.Text + "\"");
+      }
+
+      var condition = (conditions.ToArray().Length > 0 ? " WHERE " : "") + String.Join(" AND ", conditions.ToArray());
+
+      adapter.SelectCommand = new MySqlCommand(sql + condition, conn);
+      if (adapter.Fill(dataSet) > 0)
+      {
+        dataGridView1.DataSource = dataSet.Tables["Table"].DefaultView.ToTable(true);
+      }
+      else
+      {
+        MessageBox.Show("검색된 데이터가 없습니다.");
+      }
     }
 
     private void button2_Click(object sender, EventArgs e)
     {
-      // TODO: 예매
+      NewTicketDialog newTicketDialog = new NewTicketDialog();
+      newTicketDialog.ShowDialog();
     }
   }
 }
