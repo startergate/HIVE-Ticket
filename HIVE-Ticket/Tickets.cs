@@ -99,5 +99,12 @@ namespace HIVE_Ticket
         dataGridView1.DataSource = dataSet.Tables["Table"].DefaultView.ToTable(true);
       }
     }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+      var movieInfoEditForm = new MovieInfoEditform() {Location = this.Location, StartPosition = this.StartPosition};
+      this.Hide();
+      movieInfoEditForm.Show();
+    }
   }
 }
