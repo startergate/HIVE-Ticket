@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -33,19 +34,22 @@ namespace HIVE_Ticket
           adapter.SelectCommand = new MySqlCommand(sql, conn);
           if (adapter.Fill(dataSet) > 0)
           {
-            dataGridView1.DataSource = dataSet.Tables["ticket_with_user"];
+            dataGridView1.DataSource = dataSet.Tables["Table"];
           }
           else
           {
             MessageBox.Show("검색된 데이터가 없습니다.");
           }
-          
         }
       }
       catch (Exception ex)
       {
         MessageBox.Show(ex.ToString());
       }
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
     }
   }
 }
