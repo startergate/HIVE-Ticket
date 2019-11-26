@@ -94,6 +94,7 @@ namespace HIVE_Ticket
       this.button1.TabIndex = 5;
       this.button1.Text = "완료";
       this.button1.UseVisualStyleBackColor = true;
+      this.button1.Click += new System.EventHandler(this.button1_Click);
       // 
       // textBox3
       // 
@@ -109,7 +110,7 @@ namespace HIVE_Ticket
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(55, 18);
       this.label3.TabIndex = 6;
-      this.label3.Text = "영화 ID";
+      this.label3.Text = "유저 ID";
       // 
       // NewTicketDialog
       // 

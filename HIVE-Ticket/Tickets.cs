@@ -74,6 +74,8 @@ namespace HIVE_Ticket
       adapter.SelectCommand = new MySqlCommand(sql + condition, conn);
       if (adapter.Fill(dataSet) > 0)
       {
+        dataSet.Clear();
+        adapter.Fill(dataSet);
         dataGridView1.DataSource = dataSet.Tables["Table"].DefaultView.ToTable(true);
       }
       else
@@ -85,7 +87,17 @@ namespace HIVE_Ticket
     private void button2_Click(object sender, EventArgs e)
     {
       NewTicketDialog newTicketDialog = new NewTicketDialog();
-      newTicketDialog.ShowDialog();
+      var result = newTicketDialog.ShowDialog();
+      if (result != DialogResult.OK) return;
+      var sql = "SELECT * FROM ticket_with_user";
+
+      adapter.SelectCommand = new MySqlCommand(sql, conn);
+      if (adapter.Fill(dataSet) > 0)
+      {
+        dataSet.Clear();
+        adapter.Fill(dataSet);
+        dataGridView1.DataSource = dataSet.Tables["Table"].DefaultView.ToTable(true);
+      }
     }
   }
 }

@@ -47,5 +47,41 @@ namespace HIVE_Ticket
         MessageBox.Show(ex.ToString());
       }
     }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+      var sql =
+        "INSERT INTO tickets (userid, movieid, created_at, available_at) VALUES (@userid, @movieid, now(), @date)";
+      
+      adapter.InsertCommand = new MySqlCommand(sql, conn);
+      try
+      {
+        if (conn.State != ConnectionState.Open)
+        {
+          conn.Open();
+        }
+
+        adapter.InsertCommand.Parameters.AddWithValue("@userid", int.Parse(textBox3.Text));
+        adapter.InsertCommand.Parameters.AddWithValue("@movieid", int.Parse(textBox1.Text));
+        adapter.InsertCommand.Parameters.AddWithValue("@date", textBox2.Text);
+        if (adapter.InsertCommand.ExecuteNonQuery() > 0)
+        {
+          dataSet.Clear();
+          adapter.Fill(dataSet, "Table");
+          dataGridView1.DataSource = dataSet.Tables["Table"];
+          MessageBox.Show("데이터 추가가 완료되었습니다.");
+          DialogResult = DialogResult.OK;
+          this.Close();
+        }
+        else
+        {
+          MessageBox.Show("추가된 데이터가 없습니다.");
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+      }
+    }
   }
 }
