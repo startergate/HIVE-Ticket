@@ -16,5 +16,14 @@ namespace HIVE_Ticket
     {
       InitializeComponent();
     }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+      
+      var tickets = new Tickets {Location = this.Location, StartPosition = this.StartPosition};
+      
+      tickets.Show();
+      this.Hide();
+    }
   }
 }
