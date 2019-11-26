@@ -75,6 +75,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovieInfoEditform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieInfoEditform.Designer.cs">
+      <DependentUpon>MovieInfoEditform.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewTicketDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieInfoEditform.resx">
+      <DependentUpon>MovieInfoEditform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewTicketDialog.resx">
       <DependentUpon>NewTicketDialog.cs</DependentUpon>
