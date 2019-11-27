@@ -282,5 +282,23 @@ namespace HIVE_Ticket
       textBoxMovieActor.Text = dataGridViewMovie.Rows[e.RowIndex].Cells["best_actor"].Value as String;
       textBoxMovieDistID.Text = dataGridViewMovie.Rows[e.RowIndex].Cells["distid"].Value.ToString();
     }
+
+    private void dataGridViewDist_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+      textBoxDistName.Text = dataGridViewDist.Rows[e.RowIndex].Cells["name"].Value as String;
+      textBoxDistMother.Text = dataGridViewDist.Rows[e.RowIndex].Cells["parent"].Value as String;
+      switch (dataGridViewDist.Rows[e.RowIndex].Cells["size"].Value.ToString())
+      {
+        case "1":
+          radioButton3.Checked = true;
+          break;
+        case "2":
+          radioButton2.Checked = true;
+          break;
+        case "3":
+          radioButton1.Checked = true;
+          break;
+      }
+    }
   }
 }
