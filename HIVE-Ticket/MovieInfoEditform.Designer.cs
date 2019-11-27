@@ -207,6 +207,7 @@ namespace HIVE_Ticket
       this.buttonInsert1.TabIndex = 4;
       this.buttonInsert1.Text = "추가";
       this.buttonInsert1.UseVisualStyleBackColor = true;
+      this.buttonInsert1.Click += new System.EventHandler(this.buttonInsert1_Click);
       // 
       // buttonEdit1
       // 

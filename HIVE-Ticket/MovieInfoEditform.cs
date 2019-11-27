@@ -15,6 +15,7 @@ namespace HIVE_Ticket
 
     private MySqlConnection conn;
     private MySqlDataAdapter adapter;
+    private MySqlDataAdapter adapterDist;
     private DataSet dataSet;
     private DataSet dataSetDist;
 
@@ -23,6 +24,7 @@ namespace HIVE_Ticket
       string connStr = "server=db.donote.co;port=3306;database=hive_ticket;uid=hive;pwd=1111";
       conn = new MySqlConnection(connStr);
       adapter = new MySqlDataAdapter();
+      adapterDist = new MySqlDataAdapter();
       dataSet = new DataSet();
       dataSetDist = new DataSet();
 
@@ -45,8 +47,8 @@ namespace HIVE_Ticket
           
           sql = "SELECT * FROM distributors";
 
-          adapter.SelectCommand = new MySqlCommand(sql, conn);
-          if (adapter.Fill(dataSetDist) > 0)
+          adapterDist.SelectCommand = new MySqlCommand(sql, conn);
+          if (adapterDist.Fill(dataSetDist) > 0)
           {
             dataGridViewDist.DataSource = dataSetDist.Tables["Table"];
           }
@@ -147,6 +149,40 @@ namespace HIVE_Ticket
       else
       {
         MessageBox.Show("검색된 데이터가 없습니다.");
+      }
+    }
+
+    private void buttonInsert1_Click(object sender, EventArgs e)
+    {
+      string sql = "INSERT INTO movies (distid, title, summary, director, best_actor) VALUES (@distid, @title, @summary, @director, @best_actor)";
+      
+      adapter.InsertCommand = new MySqlCommand(sql, conn);
+      adapter.InsertCommand.Parameters.AddWithValue("@distid", int.Parse(textBoxMovieDistID.Text));
+      adapter.InsertCommand.Parameters.AddWithValue("@title", textBoxMovieTitle.Text);
+      adapter.InsertCommand.Parameters.AddWithValue("@summary", textBoxMovieDesc.Text);
+      adapter.InsertCommand.Parameters.AddWithValue("@director", textBoxMovieDirector.Text);
+      adapter.InsertCommand.Parameters.AddWithValue("@best_actor", textBoxMovieActor.Text);
+
+      try
+      {
+        if (conn.State != ConnectionState.Open)
+        {
+          conn.Open();
+        }
+        if (adapter.InsertCommand.ExecuteNonQuery() > 0)
+        {
+          dataSet.Clear();
+          adapter.Fill(dataSet, "Table");
+          dataGridViewMovie.DataSource = dataSet.Tables["Table"].DefaultView.ToTable(true);
+        }
+        else
+        {
+          MessageBox.Show("추가된 데이터가 없습니다.");
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
       }
     }
   }
