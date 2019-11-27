@@ -240,6 +240,40 @@ namespace HIVE_Ticket
         MessageBox.Show(ex.Message);
       }
     }
+
+    private void buttonEdit1_Click(object sender, EventArgs e)
+    {
+      var sql = "UPDATE movies SET distid = @distid, title = @title, summary = @summary, director = @director, best_actor = @actor WHERE movieid = @movieid";
+      
+      adapter.UpdateCommand = new MySqlCommand(sql, conn);
+      adapter.UpdateCommand.Parameters.AddWithValue("@distid", int.Parse(textBoxMovieDistID.Text));
+      adapter.UpdateCommand.Parameters.AddWithValue("@title", textBoxMovieTitle.Text);
+      adapter.UpdateCommand.Parameters.AddWithValue("@summary", textBoxMovieDesc.Text);
+      adapter.UpdateCommand.Parameters.AddWithValue("@director", textBoxMovieDirector.Text);
+      adapter.UpdateCommand.Parameters.AddWithValue("@actor", textBoxMovieActor.Text);
+      
+      int id = (int) dataGridViewMovie.SelectedRows[0].Cells["movieid"].Value;
+      adapter.UpdateCommand.Parameters.AddWithValue("@movieid", id);
+      string filter = "movieid=" + id;
+      DataRow[] findRows = dataSet.Tables["Table"].Select(filter);
+      findRows[0]["distid"] = int.Parse(textBoxMovieDistID.Text);
+      findRows[0]["title"] = textBoxMovieTitle.Text;
+      findRows[0]["summary"] = textBoxMovieDesc.Text;
+      findRows[0]["director"] = textBoxMovieDirector.Text;
+      findRows[0]["best_actor"] = textBoxMovieActor.Text;
+
+      try
+      {
+        adapter.Update(dataSet, "Table");
+        MessageBox.Show("수정 완료.");
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+        throw ex;
+      }
+    }
+
     private void dataGridViewMovie_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
     {
       textBoxMovieTitle.Text = dataGridViewMovie.Rows[e.RowIndex].Cells["title"].Value as String;
