@@ -174,6 +174,61 @@ namespace HIVE_Ticket
           dataSet.Clear();
           adapter.Fill(dataSet, "Table");
           dataGridViewMovie.DataSource = dataSet.Tables["Table"].DefaultView.ToTable(true);
+          MessageBox.Show("추가 완료.");
+          textBoxMovieActor.Text = "";
+          textBoxMovieDesc.Text = "";
+          textBoxMovieDirector.Text = "";
+          textBoxMovieTitle.Text = "";
+          textBoxMovieDistID.Text = "";
+        }
+        else
+        {
+          MessageBox.Show("추가된 데이터가 없습니다.");
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+      }
+    }
+
+    private void buttonInsert_Click(object sender, EventArgs e)
+    {
+      string sql = "INSERT INTO distributors (name, parent, size) VALUES (@name, @parent, @size)";
+      adapterDist.InsertCommand = new MySqlCommand(sql, conn);
+      adapterDist.InsertCommand.Parameters.AddWithValue("@name", textBoxDistName.Text);
+      adapterDist.InsertCommand.Parameters.AddWithValue("@parent", textBoxDistMother.Text);
+
+      int size = 0;
+      
+      if (radioButton1.Checked)
+      {
+        size = 3;
+      }
+      if (radioButton2.Checked)
+      {
+        size = 2;
+      }
+      if (radioButton3.Checked)
+      {
+        size = 1;
+      }
+      adapterDist.InsertCommand.Parameters.AddWithValue("@size", size);
+      
+      try
+      {
+        if (conn.State != ConnectionState.Open)
+        {
+          conn.Open();
+        }
+        if (adapterDist.InsertCommand.ExecuteNonQuery() > 0)
+        {
+          dataSetDist.Clear();
+          adapterDist.Fill(dataSetDist, "Table");
+          dataGridViewDist.DataSource = dataSetDist.Tables["Table"].DefaultView.ToTable(true);
+          MessageBox.Show("추가 완료.");
+          textBoxDistName.Text = "";
+          textBoxDistMother.Text = "";
         }
         else
         {

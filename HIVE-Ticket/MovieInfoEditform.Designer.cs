@@ -218,6 +218,7 @@ namespace HIVE_Ticket
       this.buttonEdit1.TabIndex = 3;
       this.buttonEdit1.Text = "수정";
       this.buttonEdit1.UseVisualStyleBackColor = true;
+      this.buttonEdit1.Click += new System.EventHandler(this.buttonEdit1_Click);
       // 
       // buttonDelete1
       // 
@@ -360,6 +361,7 @@ namespace HIVE_Ticket
       this.buttonInsert.TabIndex = 9;
       this.buttonInsert.Text = "추가";
       this.buttonInsert.UseVisualStyleBackColor = true;
+      this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
       // 
       // button3
       // 
