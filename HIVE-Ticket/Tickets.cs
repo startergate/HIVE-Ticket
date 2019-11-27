@@ -106,5 +106,34 @@ namespace HIVE_Ticket
       this.Hide();
       movieInfoEditForm.Show();
     }
+
+    private void button4_Click(object sender, EventArgs e)
+    {
+      string sql = "DELETE FROM tickets WHERE ticketid=@id";
+      adapter.DeleteCommand = new MySqlCommand(sql, conn);
+      int id = (int) dataGridView1.SelectedRows[0].Cells["ticketid"].Value;
+      adapter.DeleteCommand.Parameters.AddWithValue("@id", id);
+      
+      
+      try
+      {
+        if (conn.State != ConnectionState.Open)
+        {
+          conn.Open();
+        }
+        if (adapter.DeleteCommand.ExecuteNonQuery() > 0)
+        {
+          button1_Click(sender, e);
+        }
+        else
+        {
+          MessageBox.Show("삭제된 데이터가 없습니다.");
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+      }
+    }
   }
 }

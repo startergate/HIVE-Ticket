@@ -41,6 +41,7 @@ namespace HIVE_Ticket
       this.label3 = new System.Windows.Forms.Label();
       this.button2 = new System.Windows.Forms.Button();
       this.button3 = new System.Windows.Forms.Button();
+      this.button4 = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
       this.SuspendLayout();
       // 
@@ -129,6 +130,7 @@ namespace HIVE_Ticket
       // button3
       // 
       this.button3.Location = new System.Drawing.Point(720, 415);
+      this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.button3.Name = "button3";
       this.button3.Size = new System.Drawing.Size(68, 35);
       this.button3.TabIndex = 9;
@@ -136,11 +138,23 @@ namespace HIVE_Ticket
       this.button3.UseVisualStyleBackColor = true;
       this.button3.Click += new System.EventHandler(this.button3_Click);
       // 
+      // button4
+      // 
+      this.button4.Location = new System.Drawing.Point(646, 415);
+      this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.button4.Name = "button4";
+      this.button4.Size = new System.Drawing.Size(68, 35);
+      this.button4.TabIndex = 10;
+      this.button4.Text = "삭제";
+      this.button4.UseVisualStyleBackColor = true;
+      this.button4.Click += new System.EventHandler(this.button4_Click);
+      // 
       // Tickets
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 562);
+      this.Controls.Add(this.button4);
       this.Controls.Add(this.button3);
       this.Controls.Add(this.button2);
       this.Controls.Add(this.movie_time);
@@ -172,5 +186,6 @@ namespace HIVE_Ticket
     private System.Windows.Forms.TextBox customer_name;
     private System.Windows.Forms.TextBox movie_name;
     private System.Windows.Forms.Button button3;
+    private System.Windows.Forms.Button button4;
   }
 }
