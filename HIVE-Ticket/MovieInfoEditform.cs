@@ -274,6 +274,48 @@ namespace HIVE_Ticket
       }
     }
 
+    private void button3_Click(object sender, EventArgs e)
+    {
+      const string sql = "UPDATE distributors SET name = @name, parent = @parent, size = @size WHERE distid = @distid";
+      
+      adapterDist.UpdateCommand = new MySqlCommand(sql, conn);
+      adapterDist.UpdateCommand.Parameters.AddWithValue("@name", textBoxDistName.Text);
+      adapterDist.UpdateCommand.Parameters.AddWithValue("@parent", textBoxDistMother.Text);
+      
+      var id = (int) dataGridViewDist.SelectedRows[0].Cells["distid"].Value;
+      adapterDist.UpdateCommand.Parameters.AddWithValue("@distid", id);
+      string filter = "distid=" + id;
+      var findRows = dataSetDist.Tables["Table"].Select(filter);
+      findRows[0]["name"] = textBoxDistName.Text;
+      findRows[0]["parent"] = textBoxDistMother.Text;
+      if (radioButton1.Checked)
+      {
+        adapterDist.UpdateCommand.Parameters.AddWithValue("@size", 3);
+        findRows[0]["size"] = 3;
+      }
+      if (radioButton2.Checked)
+      {
+        adapterDist.UpdateCommand.Parameters.AddWithValue("@size", 2);
+        findRows[0]["size"] = 2;
+      }
+      if (radioButton3.Checked)
+      {
+        adapterDist.UpdateCommand.Parameters.AddWithValue("@size", 1);
+        findRows[0]["size"] = 1;
+      }
+
+      try
+      {
+        adapterDist.Update(dataSetDist, "Table");
+        MessageBox.Show("수정 완료.");
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+        throw ex;
+      }
+    }
+
     private void dataGridViewMovie_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
     {
       textBoxMovieTitle.Text = dataGridViewMovie.Rows[e.RowIndex].Cells["title"].Value as String;

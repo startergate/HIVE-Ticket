@@ -69,6 +69,9 @@ namespace HIVE_Ticket
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize) (this.dataGridViewDist)).BeginInit();
       this.SuspendLayout();
+      // 
+      // tabControl1
+      // 
       this.tabControl1.Controls.Add(this.tabPage1);
       this.tabControl1.Controls.Add(this.tabPage2);
       this.tabControl1.Location = new System.Drawing.Point(11, 10);
@@ -77,6 +80,9 @@ namespace HIVE_Ticket
       this.tabControl1.SelectedIndex = 0;
       this.tabControl1.Size = new System.Drawing.Size(778, 548);
       this.tabControl1.TabIndex = 0;
+      // 
+      // tabPage1
+      // 
       this.tabPage1.Controls.Add(this.textBoxMovieDistID);
       this.tabPage1.Controls.Add(this.label5);
       this.tabPage1.Controls.Add(this.textBoxMovieActor);
@@ -100,56 +106,89 @@ namespace HIVE_Ticket
       this.tabPage1.TabIndex = 0;
       this.tabPage1.Text = "영화";
       this.tabPage1.UseVisualStyleBackColor = true;
+      // 
+      // textBoxMovieDistID
+      // 
       this.textBoxMovieDistID.Location = new System.Drawing.Point(631, 288);
       this.textBoxMovieDistID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.textBoxMovieDistID.Name = "textBoxMovieDistID";
       this.textBoxMovieDistID.Size = new System.Drawing.Size(133, 23);
       this.textBoxMovieDistID.TabIndex = 15;
+      // 
+      // label5
+      // 
       this.label5.Location = new System.Drawing.Point(632, 265);
       this.label5.Name = "label5";
       this.label5.Size = new System.Drawing.Size(106, 19);
       this.label5.TabIndex = 14;
       this.label5.Text = "배급사 일련 번호";
+      // 
+      // textBoxMovieActor
+      // 
       this.textBoxMovieActor.Location = new System.Drawing.Point(631, 222);
       this.textBoxMovieActor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.textBoxMovieActor.Name = "textBoxMovieActor";
       this.textBoxMovieActor.Size = new System.Drawing.Size(133, 23);
       this.textBoxMovieActor.TabIndex = 13;
+      // 
+      // label4
+      // 
       this.label4.Location = new System.Drawing.Point(632, 200);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(63, 19);
       this.label4.TabIndex = 12;
       this.label4.Text = "영화 배우";
+      // 
+      // textBoxMovieDirector
+      // 
       this.textBoxMovieDirector.Location = new System.Drawing.Point(631, 158);
       this.textBoxMovieDirector.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.textBoxMovieDirector.Name = "textBoxMovieDirector";
       this.textBoxMovieDirector.Size = new System.Drawing.Size(133, 23);
       this.textBoxMovieDirector.TabIndex = 11;
+      // 
+      // label3
+      // 
       this.label3.Location = new System.Drawing.Point(632, 135);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(63, 19);
       this.label3.TabIndex = 10;
       this.label3.Text = "영화 감독";
+      // 
+      // textBoxMovieDesc
+      // 
       this.textBoxMovieDesc.Location = new System.Drawing.Point(631, 90);
       this.textBoxMovieDesc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.textBoxMovieDesc.Name = "textBoxMovieDesc";
       this.textBoxMovieDesc.Size = new System.Drawing.Size(133, 23);
       this.textBoxMovieDesc.TabIndex = 9;
+      // 
+      // label2
+      // 
       this.label2.Location = new System.Drawing.Point(632, 68);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(63, 19);
       this.label2.TabIndex = 8;
       this.label2.Text = "영화 설명";
+      // 
+      // textBoxMovieTitle
+      // 
       this.textBoxMovieTitle.Location = new System.Drawing.Point(631, 31);
       this.textBoxMovieTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.textBoxMovieTitle.Name = "textBoxMovieTitle";
       this.textBoxMovieTitle.Size = new System.Drawing.Size(133, 23);
       this.textBoxMovieTitle.TabIndex = 7;
+      // 
+      // label1
+      // 
       this.label1.Location = new System.Drawing.Point(632, 9);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(63, 19);
       this.label1.TabIndex = 6;
       this.label1.Text = "영화 제목";
+      // 
+      // buttonSearch1
+      // 
       this.buttonSearch1.Location = new System.Drawing.Point(630, 360);
       this.buttonSearch1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.buttonSearch1.Name = "buttonSearch1";
@@ -158,6 +197,9 @@ namespace HIVE_Ticket
       this.buttonSearch1.Text = "검색";
       this.buttonSearch1.UseVisualStyleBackColor = true;
       this.buttonSearch1.Click += new System.EventHandler(this.buttonSearch1_Click);
+      // 
+      // buttonInsert1
+      // 
       this.buttonInsert1.Location = new System.Drawing.Point(630, 399);
       this.buttonInsert1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.buttonInsert1.Name = "buttonInsert1";
@@ -166,6 +208,9 @@ namespace HIVE_Ticket
       this.buttonInsert1.Text = "추가";
       this.buttonInsert1.UseVisualStyleBackColor = true;
       this.buttonInsert1.Click += new System.EventHandler(this.buttonInsert1_Click);
+      // 
+      // buttonEdit1
+      // 
       this.buttonEdit1.Location = new System.Drawing.Point(630, 438);
       this.buttonEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.buttonEdit1.Name = "buttonEdit1";
@@ -174,6 +219,9 @@ namespace HIVE_Ticket
       this.buttonEdit1.Text = "수정";
       this.buttonEdit1.UseVisualStyleBackColor = true;
       this.buttonEdit1.Click += new System.EventHandler(this.buttonEdit1_Click);
+      // 
+      // buttonDelete1
+      // 
       this.buttonDelete1.Location = new System.Drawing.Point(630, 478);
       this.buttonDelete1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.buttonDelete1.Name = "buttonDelete1";
@@ -181,6 +229,9 @@ namespace HIVE_Ticket
       this.buttonDelete1.TabIndex = 2;
       this.buttonDelete1.Text = "삭제";
       this.buttonDelete1.UseVisualStyleBackColor = true;
+      // 
+      // dataGridViewMovie
+      // 
       this.dataGridViewMovie.ColumnHeadersHeightSizeMode =
         System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.dataGridViewMovie.Location = new System.Drawing.Point(0, 0);
@@ -192,6 +243,9 @@ namespace HIVE_Ticket
       this.dataGridViewMovie.TabIndex = 0;
       this.dataGridViewMovie.CellContentDoubleClick +=
         new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMovie_CellContentDoubleClick);
+      // 
+      // tabPage2
+      // 
       this.tabPage2.Controls.Add(this.groupBox1);
       this.tabPage2.Controls.Add(this.textBoxDistMother);
       this.tabPage2.Controls.Add(this.label9);
@@ -210,6 +264,9 @@ namespace HIVE_Ticket
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "영화 배급사";
       this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // groupBox1
+      // 
       this.groupBox1.Controls.Add(this.radioButton3);
       this.groupBox1.Controls.Add(this.radioButton2);
       this.groupBox1.Controls.Add(this.radioButton1);
@@ -221,6 +278,9 @@ namespace HIVE_Ticket
       this.groupBox1.TabIndex = 21;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "배급사 종류";
+      // 
+      // radioButton3
+      // 
       this.radioButton3.Location = new System.Drawing.Point(10, 78);
       this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.radioButton3.Name = "radioButton3";
@@ -229,6 +289,9 @@ namespace HIVE_Ticket
       this.radioButton3.TabStop = true;
       this.radioButton3.Text = "중소";
       this.radioButton3.UseVisualStyleBackColor = true;
+      // 
+      // radioButton2
+      // 
       this.radioButton2.Location = new System.Drawing.Point(10, 51);
       this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.radioButton2.Name = "radioButton2";
@@ -237,6 +300,9 @@ namespace HIVE_Ticket
       this.radioButton2.TabStop = true;
       this.radioButton2.Text = "미니메이저";
       this.radioButton2.UseVisualStyleBackColor = true;
+      // 
+      // radioButton1
+      // 
       this.radioButton1.Location = new System.Drawing.Point(10, 22);
       this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.radioButton1.Name = "radioButton1";
@@ -245,26 +311,41 @@ namespace HIVE_Ticket
       this.radioButton1.TabStop = true;
       this.radioButton1.Text = "메이저 / 직배";
       this.radioButton1.UseVisualStyleBackColor = true;
+      // 
+      // textBoxDistMother
+      // 
       this.textBoxDistMother.Location = new System.Drawing.Point(634, 90);
       this.textBoxDistMother.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.textBoxDistMother.Name = "textBoxDistMother";
       this.textBoxDistMother.Size = new System.Drawing.Size(133, 23);
       this.textBoxDistMother.TabIndex = 19;
+      // 
+      // label9
+      // 
       this.label9.Location = new System.Drawing.Point(635, 68);
       this.label9.Name = "label9";
       this.label9.Size = new System.Drawing.Size(63, 19);
       this.label9.TabIndex = 18;
       this.label9.Text = "모회사명";
+      // 
+      // textBoxDistName
+      // 
       this.textBoxDistName.Location = new System.Drawing.Point(634, 31);
       this.textBoxDistName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.textBoxDistName.Name = "textBoxDistName";
       this.textBoxDistName.Size = new System.Drawing.Size(133, 23);
       this.textBoxDistName.TabIndex = 17;
+      // 
+      // label10
+      // 
       this.label10.Location = new System.Drawing.Point(635, 9);
       this.label10.Name = "label10";
       this.label10.Size = new System.Drawing.Size(63, 19);
       this.label10.TabIndex = 16;
       this.label10.Text = "배급사명";
+      // 
+      // buttonSearch2
+      // 
       this.buttonSearch2.Location = new System.Drawing.Point(633, 360);
       this.buttonSearch2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.buttonSearch2.Name = "buttonSearch2";
@@ -273,6 +354,9 @@ namespace HIVE_Ticket
       this.buttonSearch2.Text = "검색";
       this.buttonSearch2.UseVisualStyleBackColor = true;
       this.buttonSearch2.Click += new System.EventHandler(this.buttonSearch2_Click);
+      // 
+      // buttonInsert
+      // 
       this.buttonInsert.Location = new System.Drawing.Point(633, 399);
       this.buttonInsert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.buttonInsert.Name = "buttonInsert";
@@ -281,6 +365,9 @@ namespace HIVE_Ticket
       this.buttonInsert.Text = "추가";
       this.buttonInsert.UseVisualStyleBackColor = true;
       this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
+      // 
+      // button3
+      // 
       this.button3.Location = new System.Drawing.Point(633, 438);
       this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.button3.Name = "button3";
@@ -288,6 +375,10 @@ namespace HIVE_Ticket
       this.button3.TabIndex = 8;
       this.button3.Text = "수정";
       this.button3.UseVisualStyleBackColor = true;
+      this.button3.Click += new System.EventHandler(this.button3_Click);
+      // 
+      // button4
+      // 
       this.button4.Location = new System.Drawing.Point(633, 478);
       this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.button4.Name = "button4";
@@ -295,6 +386,9 @@ namespace HIVE_Ticket
       this.button4.TabIndex = 7;
       this.button4.Text = "삭제";
       this.button4.UseVisualStyleBackColor = true;
+      // 
+      // dataGridViewDist
+      // 
       this.dataGridViewDist.ColumnHeadersHeightSizeMode =
         System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.dataGridViewDist.Location = new System.Drawing.Point(0, 0);
@@ -306,6 +400,9 @@ namespace HIVE_Ticket
       this.dataGridViewDist.TabIndex = 6;
       this.dataGridViewDist.CellContentDoubleClick +=
         new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDist_CellContentDoubleClick);
+      // 
+      // MovieInfoEditform
+      // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 562);
