@@ -340,6 +340,39 @@ namespace HIVE_Ticket
           break;
       }
     }
+
+    private void button4_Click(object sender, EventArgs e)
+    {
+      string sql = "DELETE FROM distributors WHERE distid=@id";
+      adapterDist.DeleteCommand = new MySqlCommand(sql, conn);
+      int id = (int) dataGridViewDist.SelectedRows[0].Cells["distid"].Value;
+      adapterDist.DeleteCommand.Parameters.AddWithValue("@id", id);
+      
+      
+      try
+      {
+        if (conn.State != ConnectionState.Open)
+        {
+          conn.Open();
+        }
+        if (adapterDist.DeleteCommand.ExecuteNonQuery() > 0)
+        {
+          dataSetDist.Clear();
+          adapterDist.Fill(dataSetDist, "Title");
+          dataGridViewDist.DataSource = dataSetDist.Tables["Title"];
+        }
+        else
+        {
+          MessageBox.Show("삭제된 데이터가 없습니다.");
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
+        throw;
+      }
+    }
+
     private void buttonDelete1_Click(object sender, EventArgs e)
     {
       string sql = "DELETE FROM movies WHERE movieid=@id";
