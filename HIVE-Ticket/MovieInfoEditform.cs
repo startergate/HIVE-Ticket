@@ -369,7 +369,6 @@ namespace HIVE_Ticket
       catch (Exception ex)
       {
         MessageBox.Show(ex.Message);
-        throw;
       }
     }
 
