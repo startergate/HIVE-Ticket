@@ -238,8 +238,11 @@ namespace HIVE_Ticket
       this.dataGridViewMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.dataGridViewMovie.Name = "dataGridViewMovie";
       this.dataGridViewMovie.RowTemplate.Height = 23;
+      this.dataGridViewMovie.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
       this.dataGridViewMovie.Size = new System.Drawing.Size(622, 519);
       this.dataGridViewMovie.TabIndex = 0;
+      this.dataGridViewMovie.CellContentDoubleClick +=
+        new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMovie_CellContentDoubleClick);
       // 
       // tabPage2
       // 
@@ -253,11 +256,11 @@ namespace HIVE_Ticket
       this.tabPage2.Controls.Add(this.button3);
       this.tabPage2.Controls.Add(this.button4);
       this.tabPage2.Controls.Add(this.dataGridViewDist);
-      this.tabPage2.Location = new System.Drawing.Point(4, 24);
+      this.tabPage2.Location = new System.Drawing.Point(4, 22);
       this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.tabPage2.Size = new System.Drawing.Size(770, 520);
+      this.tabPage2.Size = new System.Drawing.Size(770, 522);
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "영화 배급사";
       this.tabPage2.UseVisualStyleBackColor = true;

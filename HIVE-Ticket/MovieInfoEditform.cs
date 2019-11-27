@@ -240,5 +240,13 @@ namespace HIVE_Ticket
         MessageBox.Show(ex.Message);
       }
     }
+    private void dataGridViewMovie_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+      textBoxMovieTitle.Text = dataGridViewMovie.Rows[e.RowIndex].Cells["title"].Value as String;
+      textBoxMovieDesc.Text = dataGridViewMovie.Rows[e.RowIndex].Cells["summary"].Value as String;
+      textBoxMovieDirector.Text = dataGridViewMovie.Rows[e.RowIndex].Cells["director"].Value as String;
+      textBoxMovieActor.Text = dataGridViewMovie.Rows[e.RowIndex].Cells["best_actor"].Value as String;
+      textBoxMovieDistID.Text = dataGridViewMovie.Rows[e.RowIndex].Cells["distid"].Value.ToString();
+    }
   }
 }
