@@ -270,7 +270,6 @@ namespace HIVE_Ticket
       catch (Exception ex)
       {
         MessageBox.Show(ex.Message);
-        throw ex;
       }
     }
 
@@ -312,7 +311,6 @@ namespace HIVE_Ticket
       catch (Exception ex)
       {
         MessageBox.Show(ex.Message);
-        throw ex;
       }
     }
 
@@ -340,6 +338,36 @@ namespace HIVE_Ticket
         case "3":
           radioButton1.Checked = true;
           break;
+      }
+    }
+    private void buttonDelete1_Click(object sender, EventArgs e)
+    {
+      string sql = "DELETE FROM movies WHERE movieid=@id";
+      adapter.DeleteCommand = new MySqlCommand(sql, conn);
+      int id = (int) dataGridViewMovie.SelectedRows[0].Cells["movieid"].Value;
+      adapter.DeleteCommand.Parameters.AddWithValue("@id", id);
+      
+      
+      try
+      {
+        if (conn.State != ConnectionState.Open)
+        {
+          conn.Open();
+        }
+        if (adapter.DeleteCommand.ExecuteNonQuery() > 0)
+        {
+          dataSet.Clear();
+          adapter.Fill(dataSet, "Title");
+          dataGridViewMovie.DataSource = dataSet.Tables["Title"];
+        }
+        else
+        {
+          MessageBox.Show("삭제된 데이터가 없습니다.");
+        }
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message);
       }
     }
   }

@@ -229,6 +229,7 @@ namespace HIVE_Ticket
       this.buttonDelete1.TabIndex = 2;
       this.buttonDelete1.Text = "삭제";
       this.buttonDelete1.UseVisualStyleBackColor = true;
+      this.buttonDelete1.Click += new System.EventHandler(this.buttonDelete1_Click);
       // 
       // dataGridViewMovie
       // 
