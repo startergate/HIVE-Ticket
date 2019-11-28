@@ -135,5 +135,25 @@ namespace HIVE_Ticket
         MessageBox.Show(ex.Message);
       }
     }
+
+    private void button5_Click(object sender, EventArgs e)
+    {
+      int ticketid = (int) dataGridView1.SelectedRows[0].Cells["ticketid"].Value;
+      int userid = (int) dataGridView1.SelectedRows[0].Cells["userid"].Value;
+      int movieid = (int) dataGridView1.SelectedRows[0].Cells["movieid"].Value;
+      DateTime time = (DateTime) dataGridView1.SelectedRows[0].Cells["available_at"].Value;
+      NewTicketDialog newTicketDialog = new NewTicketDialog(ticketid, userid, movieid, time);
+      var result = newTicketDialog.ShowDialog();
+      if (result != DialogResult.OK) return;
+      var sql = "SELECT * FROM ticket_with_user";
+
+      adapter.SelectCommand = new MySqlCommand(sql, conn);
+      if (adapter.Fill(dataSet) > 0)
+      {
+        dataSet.Clear();
+        adapter.Fill(dataSet);
+        dataGridView1.DataSource = dataSet.Tables["Table"].DefaultView.ToTable(true);
+      }
+    }
   }
 }
