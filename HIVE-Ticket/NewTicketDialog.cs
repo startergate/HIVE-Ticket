@@ -97,12 +97,12 @@ namespace HIVE_Ticket
       }
       else
       {
-        var sql = "UPDATE tickets SET userid = @userid, movieid = @movieid, date = @date WHERE ticketid=@ticketid";
+        var sql = "UPDATE tickets SET userid = @userid, movieid = @movieid, available_at = @date WHERE ticketid = @ticketid";
         adapter.UpdateCommand = new MySqlCommand(sql, conn);
 
         adapter.UpdateCommand.Parameters.AddWithValue("@userid", int.Parse(textBox3.Text));
         adapter.UpdateCommand.Parameters.AddWithValue("@movieid", int.Parse(textBox1.Text));
-        adapter.UpdateCommand.Parameters.AddWithValue("@date", textBox2.Text + ":00");
+        adapter.UpdateCommand.Parameters.AddWithValue("@date", textBox2.Text);
         adapter.UpdateCommand.Parameters.AddWithValue("@ticketid", ticketid);
         
         try
