@@ -178,9 +178,10 @@ namespace HIVE_Ticket
       this.Controls.Add(this.label1);
       this.Controls.Add(this.button1);
       this.Controls.Add(this.dataGridView1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
       this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
       this.Name = "Tickets";
-      this.Text = "Tickets";
+      this.Text = "Tickets - HIVE TICKET MANAGEMENT";
       this.Load += new System.EventHandler(this.Tickets_Load);
       ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
       this.ResumeLayout(false);

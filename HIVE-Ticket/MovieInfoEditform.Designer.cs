@@ -257,11 +257,11 @@ namespace HIVE_Ticket
       this.tabPage2.Controls.Add(this.button3);
       this.tabPage2.Controls.Add(this.button4);
       this.tabPage2.Controls.Add(this.dataGridViewDist);
-      this.tabPage2.Location = new System.Drawing.Point(4, 24);
+      this.tabPage2.Location = new System.Drawing.Point(4, 22);
       this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.tabPage2.Size = new System.Drawing.Size(770, 520);
+      this.tabPage2.Size = new System.Drawing.Size(770, 522);
       this.tabPage2.TabIndex = 1;
       this.tabPage2.Text = "영화 배급사";
       this.tabPage2.UseVisualStyleBackColor = true;
@@ -409,9 +409,10 @@ namespace HIVE_Ticket
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 562);
       this.Controls.Add(this.tabControl1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
       this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
       this.Name = "MovieInfoEditform";
-      this.Text = "MovieInfoEditform";
+      this.Text = "Movie Info - HIVE TICKET MANAGEMENT";
       this.Load += new System.EventHandler(this.MovieInfoEditform_Load);
       this.tabControl1.ResumeLayout(false);
       this.tabPage1.ResumeLayout(false);

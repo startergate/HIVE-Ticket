@@ -68,12 +68,12 @@
       this.ClientSize = new System.Drawing.Size(800, 562);
       this.Controls.Add(this.button1);
       this.Controls.Add(this.pictureBox1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
       this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
       this.Name = "Login";
       this.Text = "HIVE TICKET MANAGEMENT";
       ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
       this.ResumeLayout(false);
-      this.PerformLayout();
     }
 
     #endregion
