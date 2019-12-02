@@ -19,6 +19,8 @@ namespace HIVE_Ticket
     private DataSet dataSet;
     private DataSet dataSetDist;
 
+    public Tickets upper;
+
     private void MovieInfoEditform_Load(object sender, EventArgs e)
     {
       string connStr = "server=db.donote.co;port=3306;database=hive_ticket;uid=hive;pwd=1111";
@@ -401,6 +403,13 @@ namespace HIVE_Ticket
       {
         MessageBox.Show(ex.Message);
       }
+    }
+
+    protected override void OnFormClosing(FormClosingEventArgs e)
+    {
+      base.OnFormClosing(e);
+      this.Hide();
+      upper.Show();
     }
   }
 }
